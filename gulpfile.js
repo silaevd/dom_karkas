@@ -1,129 +1,125 @@
-'use strict';
+// Определяем переменную "preprocessor"
+let preprocessor = 'sass';
 
-const gulp = require('gulp'),
-    atekla_autoprefixer = require('gulp-autoprefixer'),
-    atekla_file_include = require('gulp-file-include'),
-    atekla_sass = require('gulp-sass'),
-    atekla_uglify = require('gulp-uglify'),
-    atekla_htmlmin = require('gulp-htmlmin'),
-    atekla_browserSync = require('browser-sync'),
-    atekla_webp = require('gulp-webp'),
-    atekla_clone = require('gulp-clone'),
-    atekla_clonesink = atekla_clone.sink(),
-    atekla_reload = atekla_browserSync.reload;
+// Определяем константы Gulp
+const { src, dest, parallel, series, watch } = require('gulp');
 
-const path = {
-    build : {
-        build_html : './build',
-        build_js : './build/js',
-        build_css : './build/css',
-        build_fonts: './build/fonts',
-        build_img : './build/img',
-        build_video : './build/vid'
-    },
-    src : {
-        src_html : './src/*.html',
-        src_js : './src/js/*.js',
-        src_css : './src/css/*.css',
-        src_fonts : './src/fonts/**',
-        src_video : './src/vid/**',
-        src_img : './src/img/**/*.{jpg,jpeg,png,gif,ico,svg}',
-    },
-    watch : {
-        watch_html : './src/**/*.html',
-        watch_js : './src/**/*.js',
-        watch_css : './src/**/*.css',
-        watch_fonts : './src/fonts/**',
-        watch_video : './src/vid/**',
-        watch_img : './src/img/**/*.{jpg,jpeg,png,gif,ico,svg}',
-    }
-};
+// Подключаем Browsersync
+const browserSync = require('browser-sync').create();
 
-/** Задача Webserver – создает локальный хостинг для верстки */
+// Подключаем gulp-concat
+const concat = require('gulp-concat');
 
-gulp.task("webserver", function () {
-    atekla_browserSync({
-        server : {
-            baseDir : './'
-        },
-        host : 'localhost',
-        port : '3000',
-        tunnel : true
-    });
-});
+// Подключаем gulp-uglify-es
+const uglify = require('gulp-uglify-es').default;
 
-/** Задача для работы с изображениями + WebP */
+// Подключаем модули gulp-sass и gulp-less
+const sass = require('gulp-sass');
+const less = require('gulp-less');
 
-gulp.task("img:build", function () {
-    return gulp.src(path.src.src_img)
-        .pipe(atekla_clonesink)
-        .pipe(atekla_webp({
-            quality: 70
-        }))
-        .pipe(atekla_clonesink.tap())
-        .pipe(gulp.dest(path.build.build_img))
-        .pipe(atekla_reload({stream:true}))
-});
+// Подключаем Autoprefixer
+const autoprefixer = require('gulp-autoprefixer');
 
-/** Задача для сборки шрифтов*/
+// Подключаем модуль gulp-clean-css
+const cleancss = require('gulp-clean-css');
 
-gulp.task("fonts:build", function () {
-    return gulp.src(path.src.src_fonts)
-        .pipe(gulp.dest(path.build.build_fonts))
-        .pipe(atekla_reload({stream:true}))
-});
+// Подключаем gulp-imagemin для работы с изображениями
+const imagemin = require('gulp-imagemin');
 
-/** Задача для сборки видео */
+// Подключаем модуль gulp-newer
+const newer = require('gulp-newer');
 
-gulp.task("video:build", function () {
-    return gulp.src(path.src.src_video)
-        .pipe(gulp.dest(path.build.build_video))
-        .pipe(atekla_reload({stream:true}))
-});
+// Подключаем модуль del
+const del = require('del');
 
-/** Задача для сборки HTML */
+// Определяем логику работы Browsersync
+function browsersync() {
+	browserSync.init({ // Инициализация Browsersync
+		server: { baseDir: 'app/' }, // Указываем папку сервера
+		notify: false, // Отключаем уведомления
+		online: true // Режим работы: true или false
+	})
+}
 
-gulp.task("html:build", function () {
-    return gulp.src(path.src.src_html)
-        .pipe(atekla_file_include({
-            prefix: '@@',
-            basepath: '@file'
-        }))
-        .pipe(atekla_htmlmin({
-            collapseWhitespace: true,
-            removeComments: true
-        }))
-        .pipe(gulp.dest(path.build.build_html))
-        .pipe(atekla_reload({stream:true}))
-});
+function scripts() {
+	return src([ // Берём файлы из источников
+		'node_modules/jquery/dist/jquery.min.js', // Пример подключения библиотеки
+		'app/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
+		])
+	.pipe(concat('app.min.js')) // Конкатенируем в один файл
+	.pipe(uglify()) // Сжимаем JavaScript
+	.pipe(dest('app/js/')) // Выгружаем готовый файл в папку назначения
+	.pipe(browserSync.stream()) // Триггерим Browsersync для обновления страницы
+}
 
-/** Задача для сборки JS */
+function styles() {
+	return src('app/' + 'scss' + '/main.' + 'scss' + '') // Выбираем источник: "app/sass/main.sass" или "app/less/main.less"
+	.pipe(eval(preprocessor)()) // Преобразуем значение переменной "preprocessor" в функцию
+	.pipe(concat('app.min.css')) // Конкатенируем в файл app.min.js
+	.pipe(autoprefixer({ overrideBrowserslist: ['last 10 versions'], grid: true })) // Создадим префиксы с помощью Autoprefixer
+	.pipe(cleancss( { level: { 1: { specialComments: 0 } }/* , format: 'beautify' */ } )) // Минифицируем стили
+	.pipe(dest('app/css/')) // Выгрузим результат в папку "app/css/"
+	.pipe(browserSync.stream()) // Сделаем инъекцию в браузер
+}
 
-gulp.task("js:build", function () {
-    return gulp.src(path.src.src_js)
-        .pipe(atekla_file_include())
-        .pipe(atekla_uglify())
-        .pipe(gulp.dest(path.build.build_js))
-        .pipe(atekla_reload({stream:true}))
-});
+function images() {
+	return src('app/images/src/**/*') // Берём все изображения из папки источника
+	.pipe(newer('app/images/dest/')) // Проверяем, было ли изменено (сжато) изображение ранее
+	.pipe(imagemin()) // Сжимаем и оптимизируем изображеня
+	.pipe(dest('app/images/dest/')) // Выгружаем оптимизированные изображения в папку назначения
+}
 
-/** Задача для сборки CSS */
+function cleanimg() {
+	return del('app/images/dest/**/*', { force: true }) // Удаляем всё содержимое папки "app/images/dest/"
+}
 
-gulp.task("css:build", function () {
-    return gulp.src(path.src.src_css)
-        .pipe(atekla_sass({outputStyle: 'compressed'}))
-        .pipe(atekla_autoprefixer())
-        .pipe(gulp.dest(path.build.build_css))
-        .pipe(atekla_reload({stream:true}))
-});
+function buildcopy() {
+	return src([ // Выбираем нужные файлы
+		'app/css/**/*.min.css',
+		'app/js/**/*.min.js',
+		'app/images/dest/**/*',
+		'app/**/*.html',
+		], { base: 'app' }) // Параметр "base" сохраняет структуру проекта при копировании
+	.pipe(dest('dist')) // Выгружаем в папку с финальной сборкой
+}
 
-/** Задача для отслеживания изменений файлов */
+function cleandist() {
+	return del('dist/**/*', { force: true }) // Удаляем всё содержимое папки "dist/"
+}
 
-gulp.task('watch', function() {
-    gulp.watch(path.watch.watch_css, gulp.series('css:build'));
-    gulp.watch(path.watch.watch_js, gulp.series('js:build'));
-    gulp.watch(path.watch.html, gulp.series('html:build'));
-    gulp.watch(path.watch.watch_img, gulp.series('img:build'));
-    gulp.watch(path.watch.watch_fonts, gulp.series('fonts:build'));
-    gulp.watch(path.watch.video, gulp.series('video:build'));
-});
+function startwatch() {
+
+	// Выбираем все файлы JS в проекте, а затем исключим с суффиксом .min.js
+	watch(['app/**/*.js', '!app/**/*.min.js'], scripts);
+
+	// Мониторим файлы препроцессора на изменения
+	watch('app/**/' + 'scss' + '/**/*', styles);
+
+	// Мониторим файлы HTML на изменения
+	watch('app/**/*.html').on('change', browserSync.reload);
+
+	// Мониторим папку-источник изображений и выполняем images(), если есть изменения
+	watch('app/images/src/**/*', images);
+
+}
+
+// Экспортируем функцию browsersync() как таск browsersync. Значение после знака = это имеющаяся функция.
+exports.browsersync = browsersync;
+
+// Экспортируем функцию scripts() в таск scripts
+exports.scripts = scripts;
+
+// Экспортируем функцию styles() в таск styles
+exports.styles = styles;
+
+// Экспорт функции images() в таск images
+exports.images = images;
+
+// Экспортируем функцию cleanimg() как таск cleanimg
+exports.cleanimg = cleanimg;
+
+// Создаём новый таск "build", который последовательно выполняет нужные операции
+exports.build = series(cleandist, styles, scripts, images, buildcopy);
+
+// Экспортируем дефолтный таск с нужным набором функций
+exports.default = parallel(styles, scripts, browsersync, startwatch);
