@@ -1,7 +1,24 @@
+//Parts
+@import 'parts/header';
+// @import 'parts/profile';
+// @import 'parts/services';
+// @import 'parts/portfolio';
+// @import 'parts/contacts';
+// @import 'parts/footer';
+
+* {
+  box-sizing: border-box;
+}
+
 body {
-  background: red;
-  .test {
-    font-size: 200px;
-    color: blue;
-  }
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  border: 1px solid black;
 }

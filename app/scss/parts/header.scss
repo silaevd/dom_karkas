@@ -1,0 +1,23 @@
+header {
+  height: 500px;
+}
+
+nav {
+  height: 75px;
+  background: transparentize(black, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .logo {
+    width: 40px;
+    height: 20px;
+    background: white;
+    margin: 0 auto 0 15px;
+  }
+
+  .link {
+    color: white;
+    margin: 0 15px;
+  }
+}
