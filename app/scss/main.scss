@@ -1,6 +1,8 @@
+//Fonts
+@import "fonts";
 //Parts
-@import 'parts/header';
-// @import 'parts/profile';
+@import "parts/header";
+@import 'parts/block1';
 // @import 'parts/services';
 // @import 'parts/portfolio';
 // @import 'parts/contacts';
@@ -11,14 +13,23 @@
 }
 
 body {
+  font-family: 'NotoSans';
   display: flex;
   justify-content: center;
   padding: 0 15px;
+  // background-image: url('../images/bg.jpg');
+  background-color: #e2dce0;
 }
 
 
 .wrapper {
   width: 100%;
   max-width: 1200px;
-  border: 1px solid black;
+  margin: 25px 0 50px 0;
+  // border: 1px solid black;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
+}
+
+h1 {
+  font-size: 50px;
 }
