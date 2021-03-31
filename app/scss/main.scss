@@ -1,7 +1,9 @@
+//Plugins
+@import '../css/unite-gallery.css';
 //Fonts
-@import "fonts";
+@import 'fonts';
 //Parts
-@import "parts/header";
+@import 'parts/header';
 @import 'parts/block1';
 @import 'parts/projects';
 // @import 'parts/portfolio';
@@ -40,6 +42,18 @@ h3 {
 }
 h4 {
   font-size: 16px;
+}
+
+button {
+  color: black;
+  background: none;
+  outline: none;
+  border: 1px solid black;
+  padding: 7px 20px;
+  transition: 220ms linear;
+  &:hover {
+    cursor: pointer;
+  }
 }
 
 .bold {

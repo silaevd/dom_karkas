@@ -8,6 +8,7 @@
   width: calc(33.3% - 30px);
   padding-bottom: 30px;
   margin: 15px 15px 30px;
+  border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
 
   &-image {
@@ -38,5 +39,16 @@
   }
   &-order {
     text-align: center;
+    button {
+      font-weight: bold;
+      font-size: 16px;
+      border: 2px solid orange;
+      border-radius: 4px;
+      &:hover {
+        // color: white;
+        background: orange;
+        box-shadow: 0 5px 5px rgba(0,0,0,0.20);
+      }
+    }
   }
 }

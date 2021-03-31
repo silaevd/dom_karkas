@@ -1,4 +1,3 @@
-v = $('video');
-let vHeight = v.height();
-
-console.log(vHeight);
+$(document).ready(function(){
+  $("#gallery").unitegallery();
+});
