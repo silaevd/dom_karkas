@@ -3,7 +3,7 @@
 //Parts
 @import "parts/header";
 @import 'parts/block1';
-// @import 'parts/services';
+@import 'parts/projects';
 // @import 'parts/portfolio';
 // @import 'parts/contacts';
 // @import 'parts/footer';
@@ -21,7 +21,6 @@ body {
   background-color: #e2dce0;
 }
 
-
 .wrapper {
   width: 100%;
   max-width: 1200px;
@@ -32,4 +31,17 @@ body {
 
 h1 {
   font-size: 50px;
+}
+h2 {
+  font-size: 24px;
+}
+h3 {
+  font-size: 19px;
+}
+h4 {
+  font-size: 16px;
+}
+
+.bold {
+  font-weight: bold;
 }

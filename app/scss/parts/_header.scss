@@ -1,0 +1,100 @@
+header {
+  display: flex;
+  flex-direction: column;
+  height: 670px;
+  background: transparentize(black, 0.2);
+  padding-bottom: 30px;
+}
+
+nav {
+  height: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 15px;
+
+  .logo {
+    color: white;
+    // width: 40px;
+    // height: 20px;
+    // background: white;
+    // margin: 0 auto 0 15px;
+    margin: 0 15px;
+    svg {
+      font-size: 50px;
+    }
+  }
+
+  .links {
+    // margin: 0 auto 0 15px;
+  }
+  .link {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    letter-spacing: 1px;
+    margin: 0 15px;
+    padding-bottom: 2px;
+    border-bottom: 3px solid transparent;
+    transition: 220ms linear;
+    &:hover {
+      border-bottom: 3px solid orange;
+    }
+  }
+}
+
+.phone {
+  display: flex;
+  align-items: center;
+  a {
+    color: white;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin: 0 7px;
+    transition: 220ms linear;
+    &:hover {
+      color: orange;
+    }
+  }
+  .phonelink {
+    font-size: 20px;
+    border: none;
+  }
+  .whatsapp {
+    font-size: 25px;
+    border: none;
+  }
+}
+
+.headline {
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  margin: auto;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+}
+
+.advantage {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 30px;
+
+  &-item {
+    color: white;
+    text-align: center;
+    line-height: 1.2;
+
+    svg {
+      color: orange;
+      font-size: 75px;
+      margin-bottom: 10px;
+    }
+
+    p {
+      text-shadow: 1px 1px 2px rgba(0, 0, 0, 1);
+    }
+  }
+  .fas {
+    font-size: 50px;
+  }
+}
