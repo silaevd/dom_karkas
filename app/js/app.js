@@ -1,3 +1,3 @@
-$(document).ready(function(){
-  $("#gallery").unitegallery();
+$(function () {
+  $('.images').fotorama();
 });

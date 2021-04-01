@@ -1,0 +1,15 @@
+.about {
+  background: white;
+  padding: 50px;
+  .sectionTitle {
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    margin-bottom: 30px;
+  }
+
+  p {
+    text-align: justify;
+    line-height: 1.5;
+  }
+}

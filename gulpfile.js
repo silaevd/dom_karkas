@@ -48,8 +48,7 @@ function scripts() {
 		'node_modules/@fortawesome/fontawesome-free/js/brands.js',
 		'node_modules/@fortawesome/fontawesome-free/js/solid.js',
 		'node_modules/@fortawesome/fontawesome-free/js/fontawesome.js',
-		'node_modules/unitegallery/dist/js/unitegallery.min.js',
-		'node_modules/unitegallery/dist/themes/tiles/ug-theme-tiles.js',
+		'node_modules/fotorama/fotorama.js',
 		'app/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
 		])
 	.pipe(concat('app.min.js')) // Конкатенируем в один файл

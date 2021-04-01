@@ -1,13 +1,15 @@
 //Plugins
-@import '../css/unite-gallery.css';
+@import 'service/fotorama';
 //Fonts
 @import 'fonts';
 //Parts
 @import 'parts/header';
 @import 'parts/block1';
 @import 'parts/projects';
-// @import 'parts/portfolio';
-// @import 'parts/contacts';
+@import 'parts/gallery';
+@import 'parts/about';
+@import 'parts/contacts';
+
 // @import 'parts/footer';
 
 * {
@@ -35,10 +37,10 @@ h1 {
   font-size: 50px;
 }
 h2 {
-  font-size: 24px;
+  font-size: 50px;
 }
 h3 {
-  font-size: 19px;
+  font-size: 23px;
 }
 h4 {
   font-size: 16px;
@@ -48,6 +50,7 @@ button {
   color: black;
   background: none;
   outline: none;
+  border-radius: 4px;
   border: 1px solid black;
   padding: 7px 20px;
   transition: 220ms linear;
