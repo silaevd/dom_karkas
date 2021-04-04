@@ -44,8 +44,15 @@
 }
 
 .message {
-  padding: 100px 50px 50px;
+  padding: 50px 50px 50px;
   background: url('../images/block2_bg.jpg');
+  .sectionTitle {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    margin-bottom: 50px;
+  }
 }
 .message-form {
   input, textarea {
@@ -67,8 +74,9 @@
     border: 2px solid orange;
     border-radius: 4px;
     margin: 0 auto;
+    background: white;
     &:hover {
-      // color: white;
+      color: white;
       background: orange;
       box-shadow: 0 5px 5px rgba(0,0,0,0.20);
     }
