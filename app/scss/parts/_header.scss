@@ -43,6 +43,24 @@ nav {
   }
 }
 
+.nav_fixed {
+  position: fixed;
+  top: 0;
+  // width: 100%;
+  height: 50px;
+  max-width: inherit;
+  background: transparentize(black, 0.05);
+  z-index: 100;
+  transition: 220ms linear;
+  .logo {
+    transition: 220ms linear;
+    svg {
+      font-size: 30px;
+      transition: 220ms linear;
+    }
+  }
+}
+
 .phone {
   display: flex;
   align-items: center;
