@@ -1,13 +1,46 @@
 .block1 {
-  padding: 100px 50px;
+  padding: 75px 50px;
   // color: white;
   background: #fff;
+  background-image: url('../images/block1.png');
+  background-repeat: no-repeat;
+  background-position: right -150px bottom -10px;
 
 
-  h2 {
+  p {
+    color: white;
+    font-size: 45px;
     text-align: center;
     font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    line-height: 1.2;
+    word-wrap: break-word;
+    letter-spacing: 3px;
+    max-width: 640px;
+    text-shadow:
+		-0   -2px 1px #000000,
+		 0   -2px 1px #000000,
+		-0    2px 1px #000000,
+		 0    2px 1px #000000,
+		-2px -0   1px #000000,
+		 2px -0   1px #000000,
+		-2px  0   1px #000000,
+		 2px  0   1px #000000,
+		-1px -2px 1px #000000,
+		 1px -2px 1px #000000,
+		-1px  2px 1px #000000,
+		 1px  2px 1px #000000,
+		-2px -1px 1px #000000,
+		 2px -1px 1px #000000,
+		-2px  1px 1px #000000,
+		 2px  1px 1px #000000,
+		-2px -2px 1px #000000,
+		 2px -2px 1px #000000,
+		-2px  2px 1px #000000,
+		 2px  2px 1px #000000,
+		-2px -2px 1px #000000,
+		 2px -2px 1px #000000,
+		-2px  2px 1px #000000,
+		 2px  2px 1px #000000;
   }
 }
 
