@@ -2,9 +2,10 @@
 //* Nav
 //-------------------
 
+const header = $('#header-container');
+const nav = $('nav');
+
 function navResize() {
-  const header = $('header');
-  const nav = $('nav');
   let headerWidth = header.width();
   nav.css('width', headerWidth);
 }
@@ -13,15 +14,14 @@ navResize();
 
 $(window).resize(function(){
   navResize();
-  console.log(headerWidth);
 });
 
 $(window).scroll(function(){
   if($(this).scrollTop()>25){
-    $('nav').addClass('nav_fixed');
+    nav.addClass('nav_fixed');
   }
   else if ($(this).scrollTop()<25){
-    $('nav').removeClass('nav_fixed');
+    nav.removeClass('nav_fixed');
   }
 });
 
@@ -31,6 +31,20 @@ $(window).scroll(function(){
 
 $(window).on("load", function() {
 
+  //-------------------
+  //* Menu_Mobile
+  //-------------------
+
+  const bar = $('.menu-bar');
+  const menuLinks = $('.links');
+  navOffset = nav.offset().top;
+
+  bar.click(function(e) {
+    e.preventDefault();
+    menuLinks.css('top', navOffset);
+    menuLinks.addClass('links_mobile');
+    // offset().top;
+  });
   //-------------------
   //* Fotorama
   //-------------------
