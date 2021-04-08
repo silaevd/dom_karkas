@@ -16,7 +16,7 @@
 }
 
 .project {
-  width: calc(33.3% - 30px);
+  width: calc(50% - 30px);
   padding-bottom: 30px;
   margin: 15px 15px 30px;
   border-radius: 4px;
@@ -53,11 +53,12 @@
     button {
       font-weight: bold;
       font-size: 16px;
-      border: 2px solid orange;
+      // border: 2px solid orange;
       border-radius: 4px;
+      background: orange;
       &:hover {
-        // color: white;
-        background: orange;
+        // background: darken(orange, 15%);
+        background: lighten(orange, 15%);
         box-shadow: 0 5px 5px rgba(0,0,0,0.20);
       }
     }

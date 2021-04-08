@@ -40,44 +40,48 @@
   }
 }
 .map {
-  width: 50%;
+  width: 100%;
 }
 
 .message {
-  padding: 50px 50px 50px;
-  background: url('../images/block2_bg.jpg');
-  .sectionTitle {
-    color: white;
-    text-align: center;
-    font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
-    margin-bottom: 50px;
-  }
+  width: 50%;
+  // padding: 50px 50px 50px;
+  // background-color: #a09c64;
+  // background: url('../images/block2_bg.jpg');
+
 }
 .message-form {
   input, textarea {
+    font-size: 16px;
+    color: white;
     display: block;
-    border-radius: 4px;
-    border: 2px solid orange;
-    width: 600px;
+    border: none;
+    border-bottom: 2px solid orange;
+    width: 100%;
     margin: 0 auto 15px;
     padding-left: 15px;
+    background: none;
+    outline: none;
   }
 
   input {
     height: 35px;
   }
+  textarea {
+    font-family: 'NotoSans';
+    height: 90px;
+  }
   button {
-    display: block;
     font-weight: bold;
     font-size: 16px;
-    border: 2px solid orange;
+    // border: 2px solid orange;
     border-radius: 4px;
+    background: orange;
+    display: block;
     margin: 0 auto;
-    background: white;
     &:hover {
-      color: white;
-      background: orange;
+      // background: darken(orange, 15%);
+      background: lighten(orange, 15%);
       box-shadow: 0 5px 5px rgba(0,0,0,0.20);
     }
   }

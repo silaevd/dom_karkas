@@ -49,6 +49,7 @@ function scripts() {
 		'node_modules/@fortawesome/fontawesome-free/js/solid.js',
 		'node_modules/@fortawesome/fontawesome-free/js/fontawesome.js',
 		'node_modules/fotorama/fotorama.js',
+		'node_modules/magnific-popup/dist/jquery.magnific-popup.min.js',
 		'app/js/app.js', // Пользовательские скрипты, использующие библиотеку, должны быть подключены в конце
 		])
 	.pipe(concat('app.min.js')) // Конкатенируем в один файл

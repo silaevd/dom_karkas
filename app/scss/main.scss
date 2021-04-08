@@ -1,5 +1,6 @@
 //Plugins
 @import 'service/fotorama';
+@import 'service/magnific-popup';
 //Fonts
 @import 'fonts';
 //Parts
@@ -9,6 +10,7 @@
 @import 'parts/gallery';
 @import 'parts/about';
 @import 'parts/contacts';
+@import 'parts/popUp';
 
 // @import 'parts/footer';
 
@@ -53,7 +55,7 @@ button {
   background: none;
   outline: none;
   border-radius: 4px;
-  border: 1px solid black;
+  border: none;
   padding: 7px 20px;
   transition: 220ms linear;
   &:hover {
@@ -66,4 +68,11 @@ button {
 }
 .gold {
   color: orange;
+}
+.hidden {
+  display: none;
+}
+
+.fotorama__wrap {
+  margin: 0 auto;
 }
