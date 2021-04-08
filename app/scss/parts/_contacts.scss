@@ -27,7 +27,7 @@
     margin-bottom: 0;
   }
   svg {
-    color: orange;
+    color: $accent;
     font-size: 30px;
     margin-right: 30px;
   }
@@ -56,7 +56,7 @@
     color: white;
     display: block;
     border: none;
-    border-bottom: 2px solid orange;
+    border-bottom: 2px solid $accent;
     width: 100%;
     margin: 0 auto 15px;
     padding-left: 15px;
@@ -74,14 +74,14 @@
   button {
     font-weight: bold;
     font-size: 16px;
-    // border: 2px solid orange;
+    // border: 2px solid $accent;
     border-radius: 4px;
-    background: orange;
+    background: $accent;
     display: block;
     margin: 0 auto;
     &:hover {
-      // background: darken(orange, 15%);
-      background: lighten(orange, 15%);
+      // background: darken($accent, 15%);
+      background: lighten($accent, 15%);
       box-shadow: 0 5px 5px rgba(0,0,0,0.20);
     }
   }

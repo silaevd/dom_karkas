@@ -6,7 +6,7 @@
   right: 20px;
 
   &:hover {
-    color: orange;
+    color: $accent;
     cursor: pointer;
   }
 }
@@ -54,7 +54,7 @@
     margin-bottom: 20px;
 
     &:focus {
-      border-color: orange;
+      border-color: $accent;
     }
   }
 }

@@ -36,7 +36,7 @@
     // color: white;
     text-align: center;
     line-height: 1.2;
-    border: 2px solid grey;
+    border: 3px solid grey;
     border-radius: 4px;
     padding: 15px;
     width: calc(20% - 0px);
@@ -48,7 +48,7 @@
     // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 
     svg {
-      color: orange;
+      color: $accent;
       font-size: 75px;
       margin-bottom: 20px;
     }
@@ -110,6 +110,7 @@
 }
 
 .block2 {
+  font-family: 'Play';
   padding: 100px 50px;
   color: white;
   background: url('../images/block2_bg.jpg');
@@ -126,8 +127,11 @@
   // }
 
   h2 {
+    // color: $accent;
     text-align: center;
     font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    line-height: 1.5;
+    // text-shadow: 1px 1px 1px rgba(0, 0, 0, 1);
+    text-shadow: 4px 4px 4px #000000;
   }
 }

@@ -44,7 +44,7 @@ nav {
     border-bottom: 3px solid transparent;
     transition: 220ms linear;
     &:hover {
-      border-bottom: 3px solid orange;
+      border-bottom: 3px solid $accent;
     }
   }
 }
@@ -77,7 +77,7 @@ nav {
     margin: 0 7px;
     transition: 220ms linear;
     &:hover {
-      color: orange;
+      color: $accent;
     }
   }
   .phonelink {
@@ -133,10 +133,10 @@ nav {
       background: black;
       .link {
         margin-bottom: 15px;
-        border-bottom: 1px solid orange;
+        border-bottom: 1px solid $accent;
         letter-spacing: 2px;
         &:hover {
-          border-bottom: 1px solid orange;
+          border-bottom: 1px solid $accent;
         }
       }
     }
