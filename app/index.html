@@ -10,7 +10,7 @@
 
   <!-- Styles -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Play:wght@700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./css/reset.min.css">
   <link rel="stylesheet" href="./css/app.min.css">
 
@@ -130,21 +130,22 @@
       <h2 class="sectionTitle">Проекты</h2>
       <div class="projects">
 
-        <div class="project">
+        <div class="project" data-name="forenta">
           <div class="project-image">
             <img src="./images/dom.jpg" alt="">
           </div>
           <div class="project-title">
             <h3>Forenta</h3>
           </div>
-          <div class="project-info">
-            <li><span class="bold">Внутренняя площадь:</span>75м2</li>
-            <li><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></li>
-            <li><span class="bold">Этажность:</span>1 этаж</li>
+          <span class="project-price hidden">5 000 000</span>
+          <div class="project-info hidden">
+            <p><span class="bold">Внутренняя площадь:</span>75м2</p>
+            <p><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></p>
+            <p><span class="bold">Этажность:</span>1 этаж</p>
           </div>
-          <div class="project-order">
+          <!-- <div class="project-order">
             <button class='order-btn'>Заказать</button>
-          </div>
+          </div> -->
         </div>
 
         <div class="project">
@@ -154,7 +155,7 @@
           <div class="project-title">
             <h3>Forenta</h3>
           </div>
-          <div class="project-info">
+          <div class="project-info hidden">
             <!-- <li><span class="bold">Внутренняя площадь:</span>75м2</li>
             <li><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></li>
             <li><span class="bold">Этажность:</span>1 этаж</li> -->
@@ -171,14 +172,14 @@
           <div class="project-title">
             <h3>Forenta</h3>
           </div>
-          <div class="project-info">
-            <li><span class="bold">Внутренняя площадь:</span>75м2</li>
-            <li><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></li>
-            <li><span class="bold">Этажность:</span>1 этаж</li>
+          <div class="project-info hidden">
+            <p><span class="bold">Внутренняя площадь:</span>75м2</p>
+            <p><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></p>
+            <p><span class="bold">Этажность:</span>1 этаж</p>
           </div>
-          <div class="project-order">
+          <!-- <div class="project-order">
             <button class='order-btn'>Заказать</button>
-          </div>
+          </div> -->
         </div>
 
         <div class="project">
@@ -188,14 +189,14 @@
           <div class="project-title">
             <h3>Forenta</h3>
           </div>
-          <div class="project-info">
+          <div class="project-info hidden">
             <li><span class="bold">Внутренняя площадь:</span>75м2</li>
             <li><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></li>
             <li><span class="bold">Этажность:</span>1 этаж</li>
           </div>
-          <div class="project-order">
+          <!-- <div class="project-order">
             <button class='order-btn'>Заказать</button>
-          </div>
+          </div> -->
         </div>
 
         <div class="project">
@@ -205,14 +206,14 @@
           <div class="project-title">
             <h3>Forenta</h3>
           </div>
-          <div class="project-info">
+          <div class="project-info hidden">
             <li><span class="bold">Внутренняя площадь:</span>75м2</li>
             <li><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></li>
             <li><span class="bold">Этажность:</span>1 этаж</li>
           </div>
-          <div class="project-order">
+          <!-- <div class="project-order">
             <button class='order-btn'>Заказать</button>
-          </div>
+          </div> -->
         </div>
 
         <div class="project">
@@ -222,14 +223,14 @@
           <div class="project-title">
             <h3>Forenta</h3>
           </div>
-          <div class="project-info">
+          <div class="project-info hidden">
             <li><span class="bold">Внутренняя площадь:</span>75м2</li>
             <li><span class="bold">Внешняя площадь:</span>75м<sup>2</sup></li>
             <li><span class="bold">Этажность:</span>1 этаж</li>
           </div>
-          <div class="project-order">
+          <!-- <div class="project-order">
             <button class='order-btn'>Заказать</button>
-          </div>
+          </div> -->
         </div>
       </div>
     </div>
@@ -309,15 +310,15 @@
   <!-- //*Footer* -->
   <footer>
     <div class="map">
-      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6ac676f361eb22922cf415d3e39003d0b194b7f3536a1bf523e3811d4cbeecb6&amp;source=constructor" width="100%" height="450px" frameborder="0"></iframe>
+      <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A6ac676f361eb22922cf415d3e39003d0b194b7f3536a1bf523e3811d4cbeecb6&amp;source=constructor" width="100%" height="485px" frameborder="0"></iframe>
     </div>
   </footer>
   <!-- //*Footer*// -->
 
   <div class="popUp hidden">
-    <div id="requestPopUp" class="requestPopUp">
+    <div id="callMePopUp" class="callMePopUp">
 
-      <form id="callMe" class="requestForm">
+      <form id="callMe" class="callMeForm">
 
         <!-- Hidden Required Fields -->
         <input type="hidden" name="admin_email" value="doma@zemdev.ru">
@@ -325,15 +326,15 @@
         <input type="hidden" name="form_subject" value="Сообщение с сайта doma.zemdevelopment.ru">
         <!-- END Hidden Required Fields -->
 
-        <h2 class="requestForm__title">Оставить заявку</h2>
+        <h2 class="callMeForm__title">Обратный звонок</h2>
 
-        <label class="requestForm__label">Ваше имя*</label>
-        <input type="text" name="name" class="requestForm__input" required>
+        <!-- <label class="requestForm__label">Ваше имя*</label> -->
+        <input type="text" name="name" class="callMeForm__input" placeholder="Ваше имя" required>
 
-        <label class="requestForm__label">Телефон*</label>
-        <input type="text" name="phone" class="requestForm__input" required>
+        <!-- <label class="requestForm__label">Телефон*</label> -->
+        <input type="text" name="phone" class="callMeForm__input" placeholder="Телефон" required>
 
-        <button type="submit" class="button">Оставить заявку</button>
+        <button type="submit" class="button">Отправить</button>
       </form>
 
       <div class="popUp__close">
@@ -341,6 +342,54 @@
       </div>
 
     </div>
+
+    <div id="goodsPopUp" class="goodsPopUp">
+      <div class="flex">
+
+        <div class="goodsPopUp__cover">
+          <!--<div id="fotorama" class="fotorama" data-auto="false"></div>-->
+        </div>
+
+        <div class="goodsPopUp__info">
+          <h2 class="goodsPopUp__title"></h2>
+          <div class="goodsPopUp__desc"></div>
+          <p class="goodsPopUp__price">от <span class="highlight"></span> <i class="fas fa-ruble-sign"></i></p>
+
+          <form id="callMeFromGoods" class="requestForm">
+
+            <!-- Hidden Required Fields -->
+            <input type="hidden" name="admin_email" value="doma@zemdev.ru">
+            <input type="hidden" name="site" value="doma.zemdevelopment.ru">
+            <input type="hidden" name="project_name" value="">
+            <input type="hidden" name="form_subject" value="Сообщение с сайта doma.zemdevelopment.ru">
+            <!-- END Hidden Required Fields -->
+
+            <h2 class="requestForm__title">Оставить заявку</h2>
+
+            <!-- <label class="requestForm__label">Ваше имя*</label> -->
+            <input type="text" name="name" class="requestForm__input"  placeholder="Ваше имя" required>
+
+            <!-- <label class="requestForm__label">Телефон*</label> -->
+            <input type="text" name="phone" class="requestForm__input" placeholder="Телефон" required>
+
+            <button type="submit" class="button">Отправить</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="popUp__close">
+        <i class="fas fa-times"></i>
+      </div>
+    </div>
+
+    <!-- <div id="thankyouPopUp" class="thankyouPopUp">
+
+      <img src="./src/images/operator.jpg" alt="operator" class="thankyouPopUp__img">
+      <h2 class="thankyouPopUp__thanks">Спасибо за заявку!</h2>
+      <p class="thankyouPopUp__manager">Менеджер свяжется с Вами в ближайшее время</p>
+      <hr>
+
+    </div> -->
   </div>
 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/smoothscroll/1.4.10/SmoothScroll.min.js" integrity="sha512-HaoDYc3PGduguBWOSToNc0AWGHBi2Y432Ssp3wNIdlOzrunCtB2qq6FrhtPbo+PlbvRbyi86dr5VQx61eg/daQ==" crossorigin="anonymous"></script>

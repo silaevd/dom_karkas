@@ -57,11 +57,16 @@
     display: block;
     border: none;
     border-bottom: 2px solid $accent;
+    border-radius: 5px 5px 0 0;
     width: 100%;
     margin: 0 auto 15px;
     padding-left: 15px;
     background: none;
     outline: none;
+    &:focus {
+      border-color: $accent;
+      background: #8a8a8a21;
+    }
   }
 
   input {
@@ -69,6 +74,7 @@
   }
   textarea {
     font-family: 'NotoSans';
+    padding-top: 7px;
     height: 90px;
   }
   button {

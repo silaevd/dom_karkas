@@ -1,15 +1,27 @@
 .about {
-  background: white;
+  color: white;
   padding: 50px;
+
+  background-color: $accent;
+  .container {
+    min-height: 700px;
+    background-image: url('../images/about.png');
+    background-size: 450px;
+    background-repeat: no-repeat;
+    background-position: right -15px bottom -10px;
+  }
   .sectionTitle {
+    max-width: 1000px;
     text-align: center;
     font-weight: bold;
-    text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
+    // text-shadow: 1px 1px 1px rgba(150, 150, 150, 1);
     margin-bottom: 30px;
   }
 
   p {
-    text-align: justify;
+    font-size: 20px;
+    max-width: 1000px;
+    text-align: center;
     line-height: 1.5;
   }
 }

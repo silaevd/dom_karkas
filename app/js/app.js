@@ -92,12 +92,13 @@ $(window).on("load", function() {
   });
 
   /* ---------------------------------------------- /*
-         * Request PopUp
+         * CallMe PopUp
     /* ---------------------------------------------- */
 
-  $('#callToMe').magnificPopup({
+  $('.order-btn').magnificPopup({
+
     items: {
-      src: $('#requestPopUp'),
+      src: $('#callMePopUp'),
       type: 'inline',
     },
     preloader: false,
@@ -107,19 +108,96 @@ $(window).on("load", function() {
   });
 
   /* ---------------------------------------------- /*
-         * Request PopUp
-    /* ---------------------------------------------- */
+         * Goods PopUp
+  /* ---------------------------------------------- */
 
-  $('.order-btn').magnificPopup({
+  $('.project').click(function() {
+
+    const dataName = this.getAttribute('data-name');
+    const title = this.querySelector('.project-title h3').textContent;
+    const price = this.querySelector('.project-price').textContent;
+    const desc = this.querySelector('.project-info').innerHTML;
+    const popUp = document.querySelector('.goodsPopUp');
+    const imgList = [{
+        img: './images/goods/' + dataName + '/1.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/2.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/3.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/4.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/5.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/6.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/7.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/8.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/9.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/10.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/11.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/12.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/13.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/14.jpg'
+      },
+      {
+        img: './images/goods/' + dataName + '/15.jpg'
+      },
+    ];
+
+    popUp.querySelector('.goodsPopUp__title').textContent = title;
+    popUp.querySelector('input[name="project_name"]').setAttribute('value', title);
+    popUp.querySelector('.goodsPopUp__desc').innerHTML = desc;
+    popUp.querySelector('.goodsPopUp__price').querySelector('.highlight').textContent = price;
+    popUp.querySelector('.goodsPopUp__cover').innerHTML = '<div id="fotorama" class="fotorama" data-auto="false"></div>';
+
+    $('#fotorama').fotorama({
+      nav: 'thumbs',
+      allowfullscreen: 'true',
+      arrows: 'true',
+      // click: 'true',
+      loop: 'true',
+      thumbwidth: '110',
+      thumbheight: '60',
+      width: '100%',
+      height: 'auto',
+      maxheight: '377',
+      data: imgList
+    });
+
+  });
+
+  $('.project').magnificPopup({
     items: {
-      src: $('#requestPopUp'),
-      type: 'inline',
+      src: $('#goodsPopUp'),
+      type: 'inline'
     },
     preloader: false,
     showCloseBtn: false,
     autoFocusLast: true,
     fixedContentPos: false,
   });
+
 
   /* ---------------------------------------------- /*
        * PopUp close
