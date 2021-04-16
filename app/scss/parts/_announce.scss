@@ -1,0 +1,68 @@
+.announce {
+  font-family: 'Play';
+  padding: 100px 15px;
+  color: white;
+  background: url('../images/block2_bg.jpg');
+  background-attachment: fixed;
+  position: relative;
+
+  h2 {
+    text-align: center;
+    font-weight: bold;
+    line-height: 1.5;
+    text-shadow: 4px 4px 4px #000000;
+  }
+}
+
+//Media//-------------------------------------------------
+
+@media (max-width: 1023px) {
+  .announce {
+    padding: 50px 15px;
+    h2 {
+      font-size: 45px;
+    }
+  }
+}
+@media (max-width: 937px) {
+  .announce {
+    h2 {
+      font-size: 40px;
+    }
+  }
+}
+@media (max-width: 844px) {
+  .announce {
+    h2 {
+      font-size: 33px;
+    }
+  }
+}
+@media (max-width: 713px) {
+  .announce {
+    h2 {
+      font-size: 28px;
+    }
+  }
+}
+@media (max-width: 570px) {
+  .announce {
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+@media (max-width: 570px) {
+  .announce {
+    h2 {
+      font-size: 24px;
+    }
+  }
+}
+@media (max-width: 410px) {
+  .announce {
+    h2 {
+      font-size: 18px;
+    }
+  }
+}
