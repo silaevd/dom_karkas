@@ -10,3 +10,13 @@
   }
   // max-height: 500px;
 }
+
+//@media//-------------------------------------------------
+@media (max-width: 500px) {
+  .gallery {
+    .sectionTitle {
+      font-size: 35px;
+      padding: 0 15px;
+    }
+  }
+}

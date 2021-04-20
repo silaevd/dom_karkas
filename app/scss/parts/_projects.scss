@@ -17,8 +17,8 @@
 
 .project {
   width: calc(50% - 30px);
-  padding-bottom: 7px;
-  margin: 15px 15px 30px;
+  // padding-bottom: 7px;
+  margin: 15px;
   border-radius: 5px;
   border: 3px solid gray;
   transition: 260ms;
@@ -37,6 +37,7 @@
 }
 
   &-image {
+    line-height: 0;
     img {
       width: 100%;
       height: auto;
@@ -74,6 +75,25 @@
         // background: lighten($accent, 5%);
         border-color: $accent;
         box-shadow: 0 5px 5px rgba(0,0,0,0.20);
+      }
+    }
+  }
+}
+
+//@media//-------------------------------------------------
+@media (max-width: 500px) {
+  .goods {
+    padding: 25px 15px;
+    .sectionTitle {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+  }
+  .project {
+    &-title {
+      padding: 10px;
+      h3 {
+        font-size: 18px;
       }
     }
   }

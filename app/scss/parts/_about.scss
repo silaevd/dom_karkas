@@ -1,6 +1,6 @@
 .about {
   color: white;
-  padding: 50px;
+  padding: 50px 15px;
 
   background-color: $accent;
   .container {
@@ -23,5 +23,19 @@
     max-width: 1000px;
     text-align: center;
     line-height: 1.5;
+  }
+}
+
+//@media//-------------------------------------------------
+@media (max-width: 500px) {
+  .about {
+    padding: 25px 15px;
+    .sectionTitle {
+      font-size: 35px;
+      margin-bottom: 15px;
+    }
+    p {
+      font-size: 16px;
+    }
   }
 }
