@@ -44,7 +44,7 @@ $(window).on("load", function() {
 
   bar.click(function(e) {
     e.preventDefault();
-    menuLinks.css('top', navHeight);
+    menuLinks.css('top', navHeight -1);
     menuLinks.toggleClass('links_mobile');
     nav.toggleClass('nav_open');
     // offset().top;
@@ -95,7 +95,7 @@ $(window).on("load", function() {
          * CallMe PopUp
     /* ---------------------------------------------- */
 
-  $('.order-btn').magnificPopup({
+  $('#callToMe').magnificPopup({
 
     items: {
       src: $('#callMePopUp'),

@@ -22,11 +22,15 @@ nav {
 
   .logo {
     color: white;
-    // width: 200px;
+    max-width: 200px;
     // height: 20px;
     // background: white;
     // margin: 0 auto 0 15px;
     margin-right: 15px;
+    img {
+      width: 100%;
+      height: auto;
+    }
     svg {
       font-size: 50px;
     }
@@ -46,6 +50,9 @@ nav {
     &:hover {
       border-bottom: 3px solid $accent;
     }
+  }
+  .phonelink {
+    display: none;
   }
 }
 
@@ -119,6 +126,12 @@ nav {
     display: block;
   }
   nav {
+    .phonenumber {
+      display: none;
+    }
+    .phonelink {
+      display: block;
+    }
     .links {
       display: none;
     }
@@ -133,6 +146,10 @@ nav {
       align-items: flex-end;
       padding: 30px 15px;
       background: black;
+      background-image: url('../images/about.png');
+      background-size: 450px;
+      background-repeat: no-repeat;
+      background-position: right -15px bottom -10px;
       .link {
         margin-bottom: 15px;
         border-bottom: 1px solid $accent;
@@ -140,6 +157,9 @@ nav {
         &:hover {
           border-bottom: 1px solid $accent;
         }
+
+
+
       }
     }
 
