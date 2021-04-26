@@ -157,13 +157,14 @@ nav {
         &:hover {
           border-bottom: 1px solid $accent;
         }
-
-
-
       }
     }
-
   }
-
-
+}
+@media (max-width: 1023px) {
+  nav {
+    .logo {
+      max-width: 130px;
+    }
+  }
 }
